@@ -1,15 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+/* 导入你喜欢的自定义字体（BoutiqueBitmap9x9） */
+@import url("https://fontsapi.zeoseven.com/65/main/result.css");
 
 @tailwind base;
 @tailwind utilities;
 
 body
 {
-	font-family: Archivo, sans-serif;
+	/* 优先使用 BoutiqueBitmap9x9，回退到 Archivo 或 monospace */
+	font-family: "BoutiqueBitmap9x9", Archivo, monospace;
+	font-weight: normal;
 	margin: 0;
 	height: 100%;
 	overflow: hidden;
-	background: black;
+	/* 深蓝色背景 */
+	background: #0a1a2f;
+	/* 默认文字颜色：金色 */
+	color: #ffd966;
 }
 
 html
@@ -23,4 +30,19 @@ html
 	{
 		font-size: calc(100vw / 55);
 	}
+}
+
+/* 可选：让链接也变成金色调，并去掉下划线（保留悬浮效果） */
+a {
+	color: #e6b422;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #ffcc44;
+}
+
+/* 按钮、图标等辅助元素保持深色背景下的可读性 */
+button, .button {
+	color: #ffd966;
 }
