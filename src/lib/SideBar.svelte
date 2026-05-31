@@ -5,23 +5,24 @@
 	import NetworkingTab from './NetworkingTab.svelte';
 	import CpuTab from './CpuTab.svelte';
 	import DiskTab from './DiskTab.svelte';
-	import AnthropicTab from './AnthropicTab.svelte';
-	import PostsTab from './PostsTab.svelte';
-	import DiscordTab from './DiscordTab.svelte';
-	import GitHubTab from './GitHubTab.svelte';
+	// 以下为不需要的功能，注释掉 import 以避免未使用警告（但保留文件以兼容原结构）
+	// import AnthropicTab from './AnthropicTab.svelte';
+	// import PostsTab from './PostsTab.svelte';
+	// import DiscordTab from './DiscordTab.svelte';
+	// import GitHubTab from './GitHubTab.svelte';
 	import SmallButton from './SmallButton.svelte';
 	import { cpuActivity, diskActivity, aiActivity } from './activities.js';
+	
+	// 重新定义图标数组：只保留 Information, Networking, CPU, Disk
 	const icons = [
 		{ icon: 'fas fa-info-circle', info: 'Information', activity: null },
 		{ icon: 'fas fa-wifi', info: 'Networking', activity: null },
 		{ icon: 'fas fa-microchip', info: 'CPU', activity: cpuActivity },
 		{ icon: 'fas fa-compact-disc', info: 'Disk', activity: diskActivity },
-		{ icon: 'fas fa-robot', info: 'ClaudeAI', activity: aiActivity },
-		null,
-		{ icon: 'fas fa-book-open', info: 'Posts', activity: null },
-		{ icon: 'fab fa-discord', info: 'Discord', activity: null },
-		{ icon: 'fab fa-github', info: 'GitHub', activity: null },
+		// 以下已移除：ClaudeAI, Posts, Discord, GitHub
+		// null 分隔符也可以省略，让侧边栏更紧凑
 	];
+	
 	let dispatch = createEventDispatcher();
 	let activeInfo = null; // Tracks currently visible info.
 	let hideTimeout = 0; // Timeout for hiding info panel.
@@ -107,14 +108,7 @@
 			<CpuTab/>
 		{:else if activeInfo === 'Disk'}
 			<DiskTab on:reset/>
-		{:else if activeInfo === 'ClaudeAI'}
-			<AnthropicTab handleTool={handleTool} />
-		{:else if activeInfo === 'Posts'}
-			<PostsTab/>
-		{:else if activeInfo === 'Discord'}
-			<DiscordTab/>
-		{:else if activeInfo === 'GitHub'}
-			<GitHubTab/>
+		<!-- 以下已移除 ClaudeAI, Posts, Discord, GitHub -->
 		{:else}
 			<p>TODO: {activeInfo}</p>
 		{/if}
@@ -129,6 +123,10 @@
 			<hr class="border-t border-solid border-gray-300">
 			<div class="pt-1 pb-1">
 				<a href="https://leaningtech.com/" target="”_blank”">原作 © 2022-2025 Leaning Technologies</a>
+			</div>
+			<!-- 增加改版说明 -->
+			<div class="pt-1 pb-1 text-yellow-300">
+				改版：星溯的 Linux 终端
 			</div>
 		</div>
 	</div>
