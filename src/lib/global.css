@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 /* 导入你喜欢的自定义字体（BoutiqueBitmap9x9） */
 @import url("https://fontsapi.zeoseven.com/65/main/result.css");
 
@@ -50,4 +49,29 @@ button, .button {
 /* 隐藏顶部 Leaning Technologies 导航栏 */
 nav[aria-label="Primary"] {
     display: none !important;
+}
+
+/* 在页面顶部添加自定义顶栏 */
+body::before {
+    content: "虚无潮夕-终端";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0a1a2f;
+    color: #e6b422;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    font-family: "BoutiqueBitmap9x9", monospace;
+    letter-spacing: 1px;
+    z-index: 100;
+    border-bottom: 1px solid #e6b42233;
+    backdrop-filter: blur(4px);
+}
+
+/* 因为顶部多了固定栏，需要把终端内容往下推一点，避免被遮挡 */
+body {
+    padding-top: 36px;
 }
