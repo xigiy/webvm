@@ -1,35 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>WebVM - Linux virtualization in WebAssembly</title>
+		<title>星溯的Linux终端</title>
 
-		<meta name="description" content="Linux virtual machine, running in the browser via HTML5/WebAssembly. Networking and graphics supported.">
-		<meta name="keywords" content="WebVM, Virtual Machine, CheerpX, x86 virtualization, WebAssembly, Tailscale, JIT">
-		<meta property="og:title" content="WebVM - Linux virtualization in WebAssembly" />
-		<meta property="og:type" content="website" />
-		<meta property="og:site_name" content="WebVM"/>
-		<meta property="og:image" content="https://webvm.io/assets/social_2024.png" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@leaningtech" />
-		<meta name="twitter:title" content="WebVM - Linux virtualization in WebAssembly" />
-		<meta name="twitter:description" content="Linux virtual machine, running in the browser via HTML5/WebAssembly. Networking and graphics supported.">
-		<meta name="twitter:image" content="https://webvm.io/assets/social_2024.png" />
+		<!-- 基础描述 -->
+		<meta name="description" content="星溯的 Linux 终端 - 基于 WebVM 改造，浏览器中运行的 Linux 虚拟环境">
+		<meta name="author" content="星溯">
+		
+		<!-- 完全移除原有图标 - 不设置 favicon，浏览器会使用默认空白图标 -->
+		<!-- 如果你想用自定义图标，取消下面这行的注释并替换图片路径 -->
+		<!-- <link rel="icon" type="image/png" href="你的图标.png"> -->
 
-		<!-- Apple iOS web clip compatibility tags -->
-		<meta name="application-name" content="WebVM" />
-		<meta name="apple-mobile-web-app-title" content="WebVM" />
+		<!-- 移除原有的 og:image 和 twitter 卡片（避免显示原项目的图片） -->
+		<!-- 保留应用名称 -->
+		<meta name="application-name" content="星溯终端" />
+		<meta name="apple-mobile-web-app-title" content="星溯终端" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<link rel="shortcut icon" href="tower.ico">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<!-- 字体（保留，不删会影响样式） -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<!-- 样式文件（必须保留） -->
 		<link rel='stylesheet' href='scrollbar.css'>
-		<!-- Serviceworker script that adds the COI headers to the response headers in cases where the server does not support it. -->
+		
+		<!-- ServiceWorker - 必须保留，用于添加 COI 头 -->
 		<script src="serviceWorker.js"></script>
-		<script data-domain="webvm.io" src="https://plausible.leaningtech.com/js/script.js"></script>
+		
+		<!-- 可选：移除原项目的统计代码（plausible），避免数据外泄 -->
+		<!-- <script data-domain="webvm.io" src="https://plausible.leaningtech.com/js/script.js"></script> -->
+		
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
