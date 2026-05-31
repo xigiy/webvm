@@ -1,4 +1,9 @@
-Welcome to WebVM: A complete desktop environment running in the browser
+虚无潮夕-Linux终端
+星溯的WebVM魔改版
+
+——————————————————
+
+原版说明：
 
 WebVM is powered by CheerpX: a x86-to-WebAssembly virtualization engine and Just-in-Time compiler
 
