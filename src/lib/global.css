@@ -46,3 +46,8 @@ a:hover {
 button, .button {
 	color: #ffd966;
 }
+
+/* 隐藏顶部 Leaning Technologies 导航栏 */
+nav[aria-label="Primary"] {
+    display: none !important;
+}
