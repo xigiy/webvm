@@ -8,3 +8,5 @@
 WebVM is powered by CheerpX: a x86-to-WebAssembly virtualization engine and Just-in-Time compiler
 
 For more info: https://cheerpx.io
+
+(哦，对了，由于某些问题，图标我没动)
